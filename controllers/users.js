@@ -18,3 +18,25 @@ exports.signup = (req, res, next) => {
     res.status(200).end();
   });
 }
+
+exports.getUserDetail = (req, res, next) => {
+  const { id } = req.params;
+  console.log('#101 req.params: ', req.params);
+  console.log('#102 id: ', id);
+  User.findOne({ _id: id })
+    .then(u => {
+      console.log('#103 nhạn thông tin user: ', u);
+      if (u) {
+        res.status(200).json(u);
+      } else {
+        res.status(200).json(null);
+      }
+      
+    })
+    .catch(err => {
+      console.log('#104 lỗi trong quá trình nhận user: ', err);
+      res.status(500).json({ message: 'Lỗi trong quá trình tìm user'});
+    });
+
+
+}

@@ -1,7 +1,6 @@
 const { Types, default: mongoose, Schema, Mongoose } = require("mongoose");
 const Cart = require("../models/cart");
 const Order = require('../models/order');
-const OrderDetail = require("../models/order_detail");
 const User = require("../models/user");
 
 exports.placeOrder = async (data) => {

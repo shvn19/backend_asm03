@@ -6,6 +6,7 @@ const productRoutes = require('./routes/products');
 const userRoutes = require('./routes/users');
 const authRoutes = require('./routes/auths');
 const cartRoutes = require('./routes/carts');
+const historyRoutes = require('./routes/histories');
 const socket = require('./socket');
 
 const { Server } = require('socket.io');
@@ -40,6 +41,8 @@ app.use('/users', userRoutes);
 app.use('/products', productRoutes);
 
 app.use('/carts', cartRoutes);
+
+app.use('/histories', historyRoutes);
 
 console.log(process.env.MONGODB_URI);
 

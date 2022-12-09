@@ -14,5 +14,7 @@ router.get('/profile', isAuth, async (req, res) => {
 
 router.post('/refresh', authController.refreshToken);
 
+router.get('/:id', userController.getUserDetail);
+
 module.exports = router;
 
